@@ -1,0 +1,10 @@
+[package]
+name = "shinygrad-optim"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+shinygrad-backend = { workspace = true }
+shinygrad-core = { workspace = true }
+shinygrad-tensor = { workspace = true }
+shinygrad-autodiff = { workspace = true }

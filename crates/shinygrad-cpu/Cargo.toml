@@ -1,0 +1,10 @@
+[package]
+name = "shinygrad-cpu"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+description = "CubeCL CPU backend for shinygrad"
+
+[dependencies]
+shinygrad-cubecl = { workspace = true }
+cubecl = { workspace = true, features = ["cpu"] }

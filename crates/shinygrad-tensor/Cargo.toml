@@ -1,0 +1,7 @@
+[package]
+name = "shinygrad-tensor"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+shinygrad-backend = { workspace = true }

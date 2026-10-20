@@ -1,0 +1,42 @@
+[workspace]
+resolver = "2"
+members = ["crates/*"]
+
+[workspace.package]
+edition = "2021"
+version = "0.1.0"
+license = "MIT OR Apache-2.0"
+
+[package]
+name = "shinygrad-root"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+
+[features]
+default = ["cpu-scratch"]
+cpu-scratch = ["shinygrad/cpu-scratch"]
+cubecl-cpu = ["shinygrad/cubecl-cpu", "dep:cubecl"]
+cubecl-cuda = ["shinygrad/cubecl-cuda"]
+
+[dependencies]
+shinygrad = { path = "crates/shinygrad" }
+cubecl = { workspace = true, optional = true }
+
+[workspace.dependencies]
+rand = "0.9.0"
+ndarray = "0.15"
+
+shinygrad-backend = { path = "crates/shinygrad-backend", version = "0.1.0" }
+shinygrad-tensor = { path = "crates/shinygrad-tensor", version = "0.1.0" }
+shinygrad-autodiff = { path = "crates/shinygrad-autodiff", version = "0.1.0" }
+shinygrad-cpu-scratch = { path = "crates/shinygrad-cpu-scratch", version = "0.1.0" }
+shinygrad-cubecl = { path = "crates/shinygrad-cubecl", version = "0.1.0" }
+shinygrad-cpu = { path = "crates/shinygrad-cpu", version = "0.1.0" }
+shinygrad-cuda = { path = "crates/shinygrad-cuda", version = "0.1.0" }
+shinygrad-core = { path = "crates/shinygrad-core", version = "0.1.0" }
+shinygrad-nn = { path = "crates/shinygrad-nn", version = "0.1.0" }
+shinygrad-optim = { path = "crates/shinygrad-optim", version = "0.1.0" }
+
+cubecl = { version = "0.10", default-features = false }
+cubek = { version = "0.2", default-features = false }

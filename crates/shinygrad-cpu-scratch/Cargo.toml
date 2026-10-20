@@ -1,0 +1,9 @@
+[package]
+name = "shinygrad-cpu-scratch"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+shinygrad-backend = { workspace = true }
+ndarray = { workspace = true }
+num-traits = "0.2"

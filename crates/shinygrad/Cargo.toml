@@ -1,0 +1,26 @@
+[package]
+name = "shinygrad"
+edition.workspace = true
+version.workspace = true
+
+[features]
+default = ["cpu-scratch"]
+cpu-scratch = ["dep:shinygrad-cpu-scratch"]
+
+# CubeCL backends — disabled by default until kernels are implemented.
+# Enable with: cargo test -F cubecl-cpu
+cubecl = ["dep:shinygrad-cubecl"]
+cubecl-cpu = ["cubecl", "dep:shinygrad-cpu"]
+cubecl-cuda = ["cubecl", "dep:shinygrad-cuda"]
+
+[dependencies]
+shinygrad-backend = { workspace = true }
+shinygrad-tensor = { workspace = true }
+shinygrad-autodiff = { workspace = true }
+shinygrad-cpu-scratch = { workspace = true, optional = true }
+shinygrad-cubecl = { workspace = true, optional = true }
+shinygrad-cpu = { workspace = true, optional = true }
+shinygrad-cuda = { workspace = true, optional = true }
+shinygrad-core = { workspace = true }
+shinygrad-nn = { workspace = true }
+shinygrad-optim = { workspace = true }

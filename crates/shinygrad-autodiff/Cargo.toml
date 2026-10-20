@@ -1,0 +1,8 @@
+[package]
+name = "shinygrad-autodiff"
+edition.workspace = true
+version.workspace = true
+
+[dependencies]
+shinygrad-backend = { workspace = true }
+shinygrad-tensor = { workspace = true }

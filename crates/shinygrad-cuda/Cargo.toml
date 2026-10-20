@@ -1,0 +1,10 @@
+[package]
+name = "shinygrad-cuda"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+description = "CubeCL CUDA backend for shinygrad"
+
+[dependencies]
+shinygrad-cubecl = { workspace = true }
+cubecl = { workspace = true, features = ["cuda"] }

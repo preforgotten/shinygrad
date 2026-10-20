@@ -1,0 +1,12 @@
+[package]
+name = "shinygrad-cubecl"
+edition.workspace = true
+version.workspace = true
+license.workspace = true
+description = "CubeCL backend for shinygrad — JIT-compiles tensor ops to GPU shaders"
+
+[dependencies]
+shinygrad-backend = { workspace = true }
+cubecl = { workspace = true, features = ["cpu"] }
+cubek = { workspace = true }
+futures-lite = "2"
